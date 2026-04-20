@@ -1,0 +1,16 @@
+@import 'ngx-toastr/toastr';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body, app-root {
+    min-height: 100%;
+}
