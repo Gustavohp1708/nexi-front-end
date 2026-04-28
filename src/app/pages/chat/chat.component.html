@@ -12,7 +12,7 @@
         <header class="chat-header">
             <div>
                 <span class="chat-header__eyebrow">Caminhe por novos futuros</span>
-                <h1>IA - RECURSOS HUMANOS</h1>
+                <!-- <h1>IA - RECURSOS HUMANOS</h1> -->
             </div>
              <p>Converse com nossa IA e tire suas dúvidas sobre os Benefícios da Provider IT.</p> 
         </header>
@@ -26,7 +26,27 @@
                     <span class="message-card__author">
                         {{ message.author === 'user' ? userName : 'Inteligência Artificial' }}
                     </span>
-                    <p>{{ message.content }}</p>
+                    <div class="markdown-content">
+                        <markdown [data]="message.content"></markdown>
+                    </div>
+                    <p
+                    class="suggestions-title"
+                    *ngIf="message.author === 'assistant' && message.suggestions?.length">
+                    Posso te ajudar com mais alguma coisa?
+                    </p>
+                    
+                    <div
+                    class="suggestions"
+                    *ngIf="message.author === 'assistant' && message.suggestions?.length">
+
+                    <button
+                        class="suggestion-chip"
+                        *ngFor="let sug of message.suggestions"
+                        (click)="handleSuggestionClick(sug)">
+                        
+                        {{ sug }}
+                    </button>
+                    </div>
                 </article>
             </div>
 

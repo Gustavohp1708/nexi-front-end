@@ -1,3 +1,4 @@
 export type ChatResponse = {
-    answer: string;
+    answer: string;   
+    suggestions?: string[]; 
 };
