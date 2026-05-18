@@ -1,27 +1,9 @@
-# LoginPage
+# Front-end completo da plataforma.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+## Nexi
 
-## Development server
+A **Nexi** é uma plataforma de Inteligência Artificial criada para auxiliar empresas de forma rápida, inteligente, centralizada e totalmente personalizável.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Seu principal objetivo é facilitar o acesso a informações internas da empresa, respondendo dúvidas sobre processos, políticas, operações e qualquer outro tema relevante para o dia a dia corporativo.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<img width="1244" height="663" alt="image" src="https://github.com/user-attachments/assets/36ea7a67-f025-4bc1-803d-d6bd1ad866a8" />
