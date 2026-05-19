@@ -5,10 +5,11 @@ A **Nexi** é uma plataforma de Inteligência Artificial criada para auxiliar em
 Seu principal objetivo é facilitar o acesso a informações internas da empresa, respondendo dúvidas sobre processos, políticas, operações e qualquer outro tema relevante para o dia a dia corporativo.
 
 ---
+### Back-end: Java 17 + Spring Boot (https://github.com/Gustavohp1708/nexi-back-end)
+### Camada de IA: Pyhton + LangChain (https://github.com/Gustavohp1708/nexi-ia)
 
+---
 ### Front-end construído com Angular 17
-### Back-end: Java 17 + Spring Boot 
-### Camada de IA: Pyhton + LangChain 
 
 ---
 
