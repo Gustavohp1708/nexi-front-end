@@ -1,0 +1,75 @@
+<app-default-login-layout class="chat-layout"
+    [showActions]="false"
+    [minimalMainSection]="true">
+
+    <div layoutSidebarFooter class="sidebar-user">
+        <span class="sidebar-user__label">Usuário</span>
+        <strong>{{ userName }}</strong>
+        <button type="button" class="logout-button" (click)="logout()">Sair</button>
+    </div>
+
+    <section layoutMainContent class="chat-shell">
+        <header class="chat-header">
+            <div>
+                <span class="chat-header__eyebrow">Solução inteligente, suporte imediato</span>
+                <!-- <h1>IA - RECURSOS HUMANOS</h1> -->
+            </div>
+            <button type="button" class="logout-button logout-button--mobile" (click)="logout()">Sair</button>
+             <p>Converse com nossa IA e tire suas dúvidas.</p> 
+        </header>
+
+        <div #messagesContainer class="messages-container">
+            <div
+                *ngFor="let message of messages; trackBy: trackByMessageId"
+                class="message-row"
+                [class.message-row--user]="message.author === 'user'">
+                <article class="message-card" [class.message-card--user]="message.author === 'user'">
+                    <span class="message-card__author">
+                        {{ message.author === 'user' ? userName : 'Nexi' }}
+                    </span>
+                    <div class="markdown-content">
+                        <markdown [data]="message.content"></markdown>
+                    </div>
+                    <p
+                    class="suggestions-title"
+                    *ngIf="message.author === 'assistant' && message.suggestions?.length">
+                    Posso te ajudar com mais alguma coisa?
+                    </p>
+                    
+                    <div
+                    class="suggestions"
+                    *ngIf="message.author === 'assistant' && message.suggestions?.length">
+
+                    <button
+                        class="suggestion-chip"
+                        *ngFor="let sug of message.suggestions"
+                        (click)="handleSuggestionClick(sug)">
+                        
+                        {{ sug }}
+                    </button>
+                    </div>
+                </article>
+            </div>
+
+            <div *ngIf="isLoading" class="message-row">
+                <article class="message-card">
+                    <span class="message-card__author">Nexi </span>
+                    <p>Consultando base e preparando resposta...</p>
+                </article>
+            </div>
+        </div>
+
+        <form class="composer" (ngSubmit)="sendMessage()">
+            <input
+                type="text"
+                autocomplete="off"
+                name="prompt"
+                [(ngModel)]="prompt"
+                placeholder="Digite sua pergunta para o agente"
+                [disabled]="isLoading">
+            <button type="submit" [disabled]="isLoading || !prompt.trim()">
+                {{ isLoading ? 'Enviando...' : 'Enviar' }}
+            </button>
+        </form>
+    </section>
+</app-default-login-layout>

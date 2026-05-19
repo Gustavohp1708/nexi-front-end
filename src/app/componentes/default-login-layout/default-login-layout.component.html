@@ -1,0 +1,26 @@
+<main>
+    <section class="form-section">
+        <div class="sidebar-content">
+            <img width="182" height=""src="/assets/svg/logo.png"/>
+            <h4 *ngIf="heading">{{heading}}</h4>
+            <ng-content></ng-content>
+
+            <div class="btn-wrapper" *ngIf="showActions">
+                <button class="btn-primary" (click)="submit()" [disabled]="disablePrimaryBtn"> {{primaryBtnText}} </button>
+                <div class="divider">
+                    <div></div>
+                    <span>ou</span>
+                    <div></div>                
+                </div>
+                <button class="btn-secondary" (click)="navigate()"> {{secondaryBtnText}} </button>
+            </div>
+        </div>
+
+        <footer class="sidebar-footer">
+            <ng-content select="[layoutSidebarFooter]"></ng-content>
+        </footer>
+    </section>
+    <section class="main-section" [class.minimal]="minimalMainSection">
+        <ng-content select="[layoutMainContent]"></ng-content>
+    </section>
+</main>
